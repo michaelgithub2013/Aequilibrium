@@ -10,6 +10,7 @@ import java.util.Map;
 /**
  * @author mwang
  * Battle place for any teams of fighters
+ * It is decoupled to Transformer
  */
 public class BattleField {
 	private HashMap<String, LinkedList<Fighter>> teams = new HashMap<>();
@@ -84,10 +85,10 @@ public class BattleField {
 		// if Super VS Super happened, destroy all competitors
 		if (hasSuperVsSuper) {
 			// survivors should only be the ones who did not attend the fighting
-			for (int i = 0; i < teams.get(teamName1).size() - (originalTeamSizes.get(teamName1) - totalBattle); i++)
+			for (int i = teams.get(teamName1).size() - (originalTeamSizes.get(teamName1) - totalBattle) -1; i >=0; i--)
 				teams.get(teamName1).remove(i);
 
-			for (int i = 0; i < teams.get(teamName2).size() - (originalTeamSizes.get(teamName2) - totalBattle); i++)
+			for (int i = teams.get(teamName2).size() - (originalTeamSizes.get(teamName2) - totalBattle) -1; i >=0 ; i--)
 				teams.get(teamName2).remove(i);
 		}
 

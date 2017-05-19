@@ -1,5 +1,5 @@
 The project includes two assignments, The Castle Company and The Transformation Company. 
-The are located in different packages.
+They are located in different packages.
 
 Only the transformer application has unit tests.
 
